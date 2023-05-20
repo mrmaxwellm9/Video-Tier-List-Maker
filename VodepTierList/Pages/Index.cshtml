@@ -1,0 +1,57 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="top">
+    <div class="title">
+        <img id="logoBG" src="~/logoBG.png" style="opacity:0.5;"><div id="logoText"><h1 style="font-size:3.5vh;color:antiquewhite;font-family:Arial, Helvetica, sans-serif;text-indent:-3vw;">Video Tier<br />List Maker</h1></div>
+    </div>
+</div>
+<div style="display:table;" class="middle">
+    <ul style="background:lightgrey;height:11.111%;display:table-row;" id="sTierItems">
+        <li class="table-header">
+            S
+        </li>
+    </ul>
+    <ul style="background:#787276;height:11.111%;display:table-row;" id="aTierItems">
+        <li class="table-header">
+            A
+        </li>
+    </ul>
+    <ul style="background:lightgrey;height:11.111%;display:table-row;" id="bTierItems">
+        <li class="table-header">
+            B
+        </li>
+    </ul>
+    <ul style="background:#787276;height:11.111%;display:table-row;" id="cTierItems">
+        <li class="table-header">
+            C
+        </li>
+    </ul>
+    <ul style="background:lightgrey;height:11.111%;display:table-row;" id="dTierItems">
+        <li class="table-header">
+            D
+        </li>
+    </ul>
+    <ul style="background:#787276;height:11.111%;display:table-row;" id="fTierItems">
+        <li class="table-header">
+            F
+        </li>
+    </ul>
+    <ul style="background:grey;height:22.222vh;display:table-row;" id="addedItems">
+        <li class="add-header">
+            <div class="add-video">
+                <form action="" onsubmit="return validateVideo" method="GET">
+                    <input type="url" id="videoUrl" />
+                    <button type="button" onclick="validateVideo()" id="submitButton">Submit</button>
+                </form>
+            </div>
+        </li>
+    </ul>
+    <div id="trashBin">
+        <i class="fa-solid fa-trash-can" id="trashIcon"></i>
+    </div>
+</div>
+
+

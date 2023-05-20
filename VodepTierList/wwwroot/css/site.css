@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+    background: grey;
+    overflow-x: hidden;
+}
+
+body {
+    font-size: 14px;
+    background: grey;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+
+.top {
+    position: relative;
+    z-index: 0;
+    height: 10vh;
+    top: 0;
+    width: 16.666vw;
+}
+
+.middle {
+    position: relative;
+    float: left;
+    height: 90vh;
+    width: 100vw;
+
+}
+
+#addedItems {
+    position: relative;
+    width: 88vw;
+    height: 22.222vh;
+    float: left;
+}
+
+.add-video {
+    position: absolute;
+    height: 50%;
+    width: 10%;
+}
+
+#videoUrl {
+    position: absolute;
+    width: 7.05vw;
+    height: 2.5vh;
+}
+
+#submitButton {
+    position: absolute;
+    font-size: 1.5vh;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    top: 2.5vh;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+li {
+    float: left;
+
+}
+
+li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: .5vh .5vw;
+        text-decoration: none;
+
+    }
+
+li a:hover {
+  background-color: #111111;
+}
+
+.tierHeader {
+  position: relative;
+  float: left;
+  border: solid green;
+}
+
+.ghostItem {
+    height: 11.111vh;
+}
+
+ul[id$="TierItems"] {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.table-header {
+    width: 7.333vw;
+    height: 11.1vh;
+    border-style: solid;
+    line-height: 11.1vh;
+    text-align: center;
+}
+
+.add-header {
+    width: 7.333vw;
+    height: 11.1vh;
+    border-style: solid;
+    vertical-align: middle;
+}
+
+a img {
+    width: 6.333vw;
+    height: 10.111vh;
+}
+
+#trashBin {
+    height: 23.3vh;
+    line-height: 23vh;
+    width: 12vw;
+    background: red;
+    float: right;
+    text-align: center;
+}
+
+#trashIcon {
+    display: inline-block;
+    text-align: center;
+    font-size: 150px;
+    vertical-align: middle;
+}
+
+#logoBG {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+#logoText {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
