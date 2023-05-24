@@ -12,7 +12,6 @@ function validateVideo(evt) {
     let name = `addedItem${num}`;
 
     var addedDiv = document.createElement("li");
-    addedDiv.setAttribute("class", "ui-sortable-handle");
     addedDiv.setAttribute("id", `${name}`);
     document.getElementById("addedItems").appendChild(addedDiv);
 
@@ -58,20 +57,6 @@ function validateVideo(evt) {
     curAddedItem++;
 }
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
-
-function allowDrop(ev) {
-    ev.preventDefault();
-}
-
 //https://stackoverflow.com/questions/3452546/how-do-i-get-the-youtube-video-id-from-a-url
 function youtubeParser(url) {
     var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -79,12 +64,6 @@ function youtubeParser(url) {
     return (match && match[7].length == 11) ? match[7] : false;
 }
 
-$(function () {
-    $("#sTierItems, #aTierItems, #bTierItems, #cTierItems, #dTierItems, #fTierItems, #addedItems").sortable({
-        connectWith: "#sTierItems, #aTierItems, #bTierItems, #cTierItems, #dTierItems, #fTierItems, #addedItems",
-        items: "li:not(.table-header)"
-    });
-});
 
 $(function () {
     $('.close').click(function () {
@@ -97,3 +76,43 @@ $('#trashBin').droppable({
         ui.draggable.remove();
     }
 });
+
+
+//ChatGPT
+$('#save-wrapper').on('click', '#saveButton', function () {
+    var htmlToSave = $('#save-wrapper').html();
+    var blob = new Blob([htmlToSave], { type: 'text/html' });
+    var url = URL.createObjectURL(blob);
+    var downloadLink = document.createElement('a');
+    downloadLink.href = url;
+    downloadLink.download = 'saved.html';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    URL.revokeObjectURL(url);
+    document.body.removeChild(downloadLink);
+});
+
+
+function applySortable() {
+    $("#sTierItems, #aTierItems, #bTierItems, #cTierItems, #dTierItems, #fTierItems, #addedItems").sortable({
+        connectWith: "#sTierItems, #aTierItems, #bTierItems, #cTierItems, #dTierItems, #fTierItems, #addedItems",
+        items: "li:not(.table-header):not(.add-header)"
+    }).disableSelection();
+}
+
+// Load button change event handler
+$('#save-wrapper').on('change', '#loadButton', function (e) {
+    var file = e.target.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+        var loadedHtml = e.target.result;
+        $('#save-wrapper').html(loadedHtml);
+        applySortable(); // Reapply sortable after loading the content
+    };
+
+    reader.readAsText(file);
+});
+
+// Apply sortable initially
+applySortable();

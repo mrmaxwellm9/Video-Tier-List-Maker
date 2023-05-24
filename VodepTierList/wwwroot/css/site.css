@@ -69,6 +69,16 @@ body {
     top: 2.5vh;
 }
 
+#saveButton {
+    position: relative;
+    font-size: 1.5vh;
+}
+
+#loadButton {
+    position: relative;
+    font-size: 1.5vh;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -123,6 +133,10 @@ ul[id$="TierItems"] {
     height: 11.1vh;
     border-style: solid;
     vertical-align: middle;
+}
+
+.add-header.not-sortable {
+    pointer-events: none; 
 }
 
 a img {

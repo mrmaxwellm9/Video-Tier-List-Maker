@@ -10,13 +10,15 @@ PLANNED IMPROVEMENTS:
 -Add Video Playlists
 -Ability to add more tiers
 -Save a tier list state to local computer and load the state
+-Save on refresh and clear data button with confirmation popup
+-Add youtube browser
 
 LATER:
 -Allow to save and share lists with others without using local files
 -Upload video files
 -Use non-youtube videos
 -->
-
+<div id="save-wrapper">
 <div class="top">
     <div class="title">
         <img id="logoBG" src="~/logoBG.png" style="opacity:0.5;"><div id="logoText"><h1 style="font-size:3.5vh;color:antiquewhite;font-family:Arial, Helvetica, sans-serif;text-indent:-3vw;">Video Tier<br />List Maker</h1></div>
@@ -53,13 +55,18 @@ LATER:
             F
         </li>
     </ul>
+    <!--Put buttons here maybe or at top-->
     <ul style="background:grey;height:22.222vh;display:table-row;" id="addedItems">
         <li class="add-header">
             <div class="add-video">
-                <form action="" onsubmit="return validateVideo" method="GET">
                     <input type="url" id="videoUrl" />
+                        <br />
                     <button type="button" onclick="validateVideo()" id="submitButton">Submit</button>
-                </form>
+                        <br />
+                    <button id="saveButton">Save List</button>
+                        <br />
+                    <input type="file" id="loadButton" style="display: none;">
+                    <input type="button" value="Browse..." onclick="document.getElementById('loadButton').click();" />
             </div>
         </li>
     </ul>
@@ -67,5 +74,5 @@ LATER:
         <i class="fa-solid fa-trash-can" id="trashIcon"></i>
     </div>
 </div>
-
+</div>
 
