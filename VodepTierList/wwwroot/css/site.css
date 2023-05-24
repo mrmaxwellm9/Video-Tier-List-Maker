@@ -70,13 +70,22 @@ body {
 }
 
 #saveButton {
-    position: relative;
+    position: absolute;
     font-size: 1.5vh;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    bottom: 0.5vh;
 }
 
 #loadButton {
-    position: relative;
+    position: absolute;
     font-size: 1.5vh;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    bottom: 0.5vh;
+    right: 1.7vw;
 }
 
 ul {
