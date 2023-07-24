@@ -7,11 +7,11 @@ Webpage that allows users to input YouTube video URLs to add a sortable thumbnai
 ## Initiation 
 
 To use, download the [build](https://github.com/mrmaxwellm9/Video-Tier-List-Maker-Build) repository to run the webpage server from an executable, or download this repository if would like to run the webserver via the program cs file. Once the server is running open a web browser and visit the https address the server is listening on.
-![alt text](https://raw.githubusercontent.com/mrmaxwellm9/images/main/tierlist%20running%20server.png?token=GHSAT0AAAAAACEFFZBSEZG44YJ5PUTYF4GUZFYEAIA "Server Running Picture")
+![tierlist running server](https://github.com/mrmaxwellm9/Video-Tier-List-Maker/assets/130167736/489732c7-f3c2-4c73-9185-369bb1ab13b7)
 In the example above the https address you would visit is https://localhost:5001
 
 When the webpage loads you should see the screen below of something similar.
-![alt text](https://raw.githubusercontent.com/mrmaxwellm9/images/main/tierlist%20bg.png?token=GHSAT0AAAAAACEFFZBTEXB5KC4Y3GEQIN46ZFYEDCQ "Tier List BG")
+![tierlist bg](https://github.com/mrmaxwellm9/Video-Tier-List-Maker/assets/130167736/b17dd825-f50c-40e9-bc1f-cd27907992c2)
 
 ## Adding Videos
 
